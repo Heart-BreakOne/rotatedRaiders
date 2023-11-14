@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Options page for spoofing the user agent to emulate mobile mode</title>
+  <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+  <div class="two">
+     <input type="checkbox" id="bypass-cache">
+     <label for="bypass-cache">Bypass <a data-href="faq4" target="_blank">browser's cache</a> when switching to the mobile view</label>
+     <span>Android</span>
+     <textarea rows="5" id="ua-android"></textarea>
+     <span>iOS</span>
+     <textarea rows="5" id="ua-ios"></textarea>
+     <span>Kindle</span>
+     <textarea rows="5" id="ua-kindle"></textarea>
+  </div>
+
+  <span>Apply the following styling rules to the page when mobile-view is enabled (this feature is not yet available)</span>
+  <textarea id="css" rows="5" placeholder="e.g.: body {width: 500px !important}"></textarea>
+
+  <p>
+    <input type="button" value="Support Development" id="support">
+    <input type="button" value="Reset" id="reset">
+  </p>
+  <p>
+    <input type="button" value="Save Options" id="save">
+    <span id="toast"></span>
+  </p>
+  <script src="index.js"></script>
+</body>
+</html>
