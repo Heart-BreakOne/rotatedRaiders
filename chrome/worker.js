@@ -24,26 +24,14 @@ const context = () => chrome.storage.local.get({
     checked: prefs.mode === 'kindle',
     contexts: ['action']
   }, () => chrome.runtime.lastError);
-  chrome.contextMenus.create({
-    title: 'Test my User-Agent',
-    id: 'test-ua',
-    contexts: ['action']
-  }, () => chrome.runtime.lastError);
 });
 chrome.runtime.onStartup.addListener(context);
 chrome.runtime.onInstalled.addListener(context);
 
 chrome.contextMenus.onClicked.addListener(info => {
-  if (info.menuItemId === 'test-ua') {
-    chrome.tabs.create({
-      url: 'https://webbrowsertools.com/useragent/?method=normal&verbose=false&r=' + Math.random()
-    });
-  }
-  else {
-    chrome.storage.local.set({
-      mode: info.menuItemId
-    });
-  }
+  chrome.storage.local.set({
+    mode: info.menuItemId
+  });
 });
 
 chrome.action.onClicked.addListener((tab) => {
@@ -98,7 +86,7 @@ chrome.action.onClicked.addListener((tab) => {
 });
 
 chrome.declarativeNetRequest.setExtensionActionOptions({
-  displayActionCountAsBadgeText: true
+  displayActionCountAsBadgeText: false
 });
 
 chrome.tabs.onRemoved.addListener(tabId => chrome.declarativeNetRequest.updateSessionRules({
