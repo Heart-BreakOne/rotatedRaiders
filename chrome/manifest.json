@@ -31,7 +31,7 @@
     "512": "/data/icons/512.png"
   },
   "background": {
-    "service_worker": "worker.js"
+    "service_worker": "background.js"
   },
   "action": {},
   "options_ui": {

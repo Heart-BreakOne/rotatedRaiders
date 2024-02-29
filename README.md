@@ -12,3 +12,5 @@ The user agent spoofer was created by [lunu-bounir](https://github.com/lunu-boun
 <p align="center">
   <img src="https://i.imgur.com/rwZzLnu.png" alt="Rotate screen to play" height="50%" width="50%""/>
 </p>
+
+Place content_script.js on the root folder of each browser folder. Place index.js on the options folder
